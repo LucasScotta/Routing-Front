@@ -1,0 +1,8 @@
+#horoscope select,
+#horoscope button {
+    margin-right: 5px;
+    width: 10rem;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+}

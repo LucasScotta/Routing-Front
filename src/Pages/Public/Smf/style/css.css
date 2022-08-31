@@ -1,0 +1,7 @@
+.light {
+    justify-self: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,12 @@
+#profile,
+#login,
+#sign-up,
+#smf,
+#horoscope {
+    text-align: center;
+    display: grid;
+}
+
+.section-form {
+    display: grid;
+}
