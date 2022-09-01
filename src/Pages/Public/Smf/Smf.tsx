@@ -9,7 +9,7 @@ const lights = ['red', 'yellow', 'green']
 
 export const Smf = () => {
     // state with actual color
-    const [data, setData] = useState({ name: '', color: 'blue', time: 0 })
+    const [data, setData] = useState({ name: '', color: 'blue', time: '' })
     const { name } = useSelector((store: AppStore) => store.user)
 
     /**
@@ -43,7 +43,7 @@ export const Smf = () => {
             {lights.map(light => <div id={light} key={light} style={{ backgroundColor: light }} onClick={updateColor} className="light" />)}
             <br />
             <p>Last change by {data.name || 'Anonymous'}</p>
-            <p>at {data.time ? parseSmfDate(data.time) : 'Right now'}</p>
+            <p>at {data.time || 'Right now'}</p>
             <div className="light" style={{ backgroundColor: data.color }} />
         </section>
     )

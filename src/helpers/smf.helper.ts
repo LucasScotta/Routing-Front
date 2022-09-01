@@ -1,16 +1,18 @@
 interface SmfResponse {
     name: string
     color: string
+    time: number
 }
 
 interface SmfData {
     name: string
     color: string
-    time: number
+    time: string
 }
 
 export const parseSmfData = (response: SmfResponse): SmfData => {
-    return {...response, time: Date.now()}
+    const { time } = response
+    return { ...response, time: parseSmfDate(time) }
 }
 
 export const parseSmfDate = (time: number) => {
