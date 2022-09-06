@@ -40,11 +40,10 @@ export const Smf = () => {
 
     return (
         <section id="smf">
-            {lights.map(light => <div id={light} key={light} style={{ backgroundColor: light }} onClick={updateColor} className="light" />)}
+            {lights.map(light => <div id={light} key={light} style={{ filter:`brightness(${light === data.color ? 100 : 50}%)`, backgroundColor: light }} onClick={updateColor} className="light" />)}
             <br />
             <p>Last change by {data.name || 'Anonymous'}</p>
             <p>at {data.time || 'Right now'}</p>
-            <div className="light" style={{ backgroundColor: data.color }} />
         </section>
     )
 }
