@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Home, Horoscope, Login, Signup, Smf } from "../../Pages";
+import { Home, Horoscope, Login, Palette, Signup, Smf } from "../../Pages";
 import { PrivateRoutes, PublicRoutes } from "../../Routes";
 import { Private } from "../Private";
 
@@ -12,6 +12,7 @@ export const Public = () => (
         <Route path={PublicRoutes.SMF} element={<Smf />} />
         <Route path={PublicRoutes.LOGIN} element={<Login />} />
         <Route path={PublicRoutes.HOROSCOPE} element={<Horoscope />} />
+        <Route path={PublicRoutes.PALETTE} element={<Palette />} />
         <Route path={PrivateRoutes.LOGOUT} element={<Navigate replace to={`/${PrivateRoutes.PRIVATE}/${PrivateRoutes.LOGOUT}`} />} />
         <Route path="*" element={<Navigate to={PublicRoutes.PUBLIC} />} />
     </Routes>
