@@ -1,0 +1,42 @@
+.palette-colors {
+    display: grid;
+    grid-template-columns: repeat(4, 16vw);
+    grid-template-rows: repeat(2, 20vh);
+    place-content: center;
+}
+
+.palette-color {
+    margin: 1px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.palette-rgb-text {
+    display: none;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.palette-color:hover {
+    transition: 0.5s;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))!important;
+}
+.palette-color:hover .palette-rgb-text {
+    display: flex;
+}
+
+.palette-button {
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    align-self: flex-end;
+    margin-right: 100px;
+    color: black;
+    font-size: 20px;
+}

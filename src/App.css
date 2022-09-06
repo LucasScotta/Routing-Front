@@ -10,3 +10,8 @@
 .section-form {
     display: grid;
 }
+
+#palette {
+    display: flex;
+    flex-direction: column;
+}
