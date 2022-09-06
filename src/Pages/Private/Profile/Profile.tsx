@@ -26,6 +26,9 @@ export const Profile = () => {
             <section className="section-form">
                 <DeleteByPassword />
             </section>
+            <section className="profile-palette">
+                {colors!! ? colors.map(color => <Color key={color} color={color} /> ): <></>} 
+            </section>
         </section>
         </>
     )

@@ -17,6 +17,7 @@ export const Palette = () => {
         setButtonColor(buttonStyling)
         setColors(arr)
     }
+
     useEffect(() => {
         resetColors()
     }, [])
@@ -29,6 +30,11 @@ export const Palette = () => {
                 )
             })}
         </div>
-        <button className="palette-button" style={{ backgroundColor: buttonColor.backgroundColor, color: buttonColor.color }} onClick={resetColors}>Reset Colors</button>
+        <input
+            className="palette-submit"
+            style={{ transition: 'background-color 1s ease-in', backgroundColor: buttonColor.backgroundColor, color: buttonColor.color }}
+            onClick={resetColors}
+            type="submit"
+            value="RESET" />
     </section>
 }
