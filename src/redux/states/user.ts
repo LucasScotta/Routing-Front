@@ -3,7 +3,7 @@ import { clearLocalStorage, getLocalStorage, userStorageKey, setAndPersistLocalS
 import { UserInfo } from "../../models";
 
 // default user State
-export const EmptyUserState: UserInfo = { id: 0, name: '', email: '', createdAt: 0 }
+export const EmptyUserState: UserInfo = { id: 0, name: '', email: '', createdAt: 0, colors: []}
 
 
 export const userSlice = createSlice({
@@ -17,7 +17,7 @@ export const userSlice = createSlice({
          * @returns {UserInfo}
          */
         createUser: (_state, action): UserInfo => {
-            setAndPersistLocalStorage<UserInfo>(userStorageKey, action.payload)
+            setAndPersistLocalStorage<UserInfo>(userStorageKey, {...EmptyUserState, ...action.payload})
             return action.payload
         },
         /**

@@ -3,5 +3,6 @@ export interface UserInfo {
     id: number
     name: string
     email: string
-    createdAt: number
+    createdAt: number,
+    colors: string[]
 }
