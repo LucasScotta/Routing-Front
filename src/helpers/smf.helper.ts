@@ -2,12 +2,14 @@ interface SmfResponse {
     name: string
     color: string
     time: number
+    times: number
 }
 
 interface SmfData {
     name: string
     color: string
     time: string
+    times: number
 }
 
 export const parseSmfData = (response: SmfResponse): SmfData => {

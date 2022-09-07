@@ -9,7 +9,7 @@ const lights = ['red', 'yellow', 'green']
 
 export const Smf = () => {
     // state with actual color
-    const [data, setData] = useState({ name: '', color: 'blue', time: '' })
+    const [data, setData] = useState({ name: '', color: 'blue', time: '', times: -1 })
     const { name } = useSelector((store: AppStore) => store.user)
 
     /**
@@ -45,6 +45,7 @@ export const Smf = () => {
             <div>
                 <p>Last change by {data.name ? data.name : 'Loading...'}</p>
                 <p>at {data.time || ' Loading...'}</p>
+                <p>total changes: {data.times >= 0 ? data.times : 'Loading...'}</p>
             </div>
         </section>
     )

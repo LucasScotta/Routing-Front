@@ -3,7 +3,7 @@ import { BuildUrl } from '../helpers'
 import { ApiBaseUrl, ApiEndPoints } from '../models'
 
 // call the API to get last change
-export const getColor = async (light: string = ''): Promise<{ name: string, color: string, time: number }> => {
+export const getColor = async (light: string = ''): Promise<{ name: string, color: string, time: number, times: number }> => {
     const url = BuildUrl(ApiBaseUrl, ApiEndPoints.SMF)
     const fullUrl = BuildUrl(url, `?color=${light}`)
     const resp = await axios.get(fullUrl)
