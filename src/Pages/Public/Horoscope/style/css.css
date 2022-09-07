@@ -1,3 +1,11 @@
+#horoscope {
+    place-content: center;
+}
+.horoscope-result {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    justify-content: center;
+}
 #horoscope select,
 #horoscope button {
     margin-right: 5px;
@@ -5,4 +13,7 @@
     height: 50px;
     text-align: center;
     font-size: 20px;
+}
+.description {
+    width: 300px;
 }

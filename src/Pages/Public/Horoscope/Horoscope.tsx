@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, useState } from "react"
+import { ChangeEvent, Dispatch, Fragment, useState } from "react"
 import { HoroscopeData } from "../../../models"
 import { GetHoroscope } from "../../../services"
 import './style/css.css'
@@ -7,6 +7,7 @@ const days: string[] = ['today', 'tomorrow', 'yesterday']
 
 export const Horoscope = () => {
     const [data, setData] = useState({ sign: 'aries', day: 'today' })
+    const [msg, setMsg] = useState('')
 
     const [result, setResult]: [
         result: HoroscopeData | {},
@@ -14,10 +15,13 @@ export const Horoscope = () => {
     ] = useState({})
 
     const search = async (): Promise<void> => {
+        setMsg('Loading...')
+        setResult({})
         const response = await GetHoroscope(data)
         if (!!response) {
             setResult(response)
         }
+        setMsg('')
     }
 
     const selectSign = (e: ChangeEvent<HTMLSelectElement>): void => {
@@ -34,13 +38,7 @@ export const Horoscope = () => {
     const showResults = () => {
         const entries = Object.entries(result)
         if (!!entries.length) {
-            return entries.map(entry => {
-                const key = entry[0]
-                const value = entry[1]
-                if (typeof value === 'string') {
-                    return <p key={key}>{key.slice(0,1).toUpperCase() + key.slice(1)}: {value}</p>
-                }
-            })
+            return
         }
         return <></>
     }
@@ -54,9 +52,17 @@ export const Horoscope = () => {
                 {days.map(day => <option value={day} key={day}>{day}</option>)}
             </select>
             <button onClick={search}>Search</button>
-            <div className="horoscope-result">
-                {showResults()}
-            </div>
+            <p>{msg}</p>
         </div>
+
+        <div className="horoscope-result">{!!Object.entries(result).length ? Object.entries(result).map(entry => {
+            const key = entry[0]
+            const value = entry[1]
+            if (typeof value === 'string') {
+                return <Fragment key={key}>
+                    <p>{(key.slice(0, 1).toUpperCase() + key.slice(1)).replace('_', ' ')}</p><p className={key}>{value.replace('_', ' ')}</p>
+                </Fragment>
+            }
+        }) : <></>}</div>
     </section>
 }
