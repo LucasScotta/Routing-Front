@@ -6,13 +6,13 @@ import { AppStore } from "../../../redux/store"
 import { DeleteByPassword, UpdatePassword } from "../Password"
 
 export const Profile = () => {
-    
+
     const userState = useSelector((store: AppStore) => store.user)
     const { name, createdAt, colors } = userState
 
     return (
-        <><section id="profile">
-            <section className="data">
+        <section className="profile">
+            <section className="profile-data">
                 <h2>Profile</h2>
                 <div>name: {name}
                 </div>
@@ -20,16 +20,11 @@ export const Profile = () => {
                     Member since: {new Date(createdAt).toLocaleString()}
                 </div>
             </section>
-            <section className="section-form">
-                <UpdatePassword />
-            </section>
-            <section className="section-form">
-                <DeleteByPassword />
-            </section>
+            <UpdatePassword />
+            <DeleteByPassword />
             <section className="profile-palette">
-                {colors!! ? colors.map(color => <Color key={color} color={color} /> ): <></>} 
+                {colors!! ? colors.map(color => <Color key={color} color={color} />) : <></>}
             </section>
         </section>
-        </>
     )
 }

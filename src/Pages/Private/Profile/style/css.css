@@ -1,3 +1,21 @@
+.profile {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-data {
+    position: absolute;
+    left: 0;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-style: italic;
+    color: white;
+    background-color: #181818;
+}
+
 .profile-palette {
     display: grid;
     justify-content: space-around;
@@ -5,7 +23,7 @@
     grid-auto-rows: 100px;
 }
 
-.palette-color:hover, .color-option {
+.palette-color:hover,
+.color-option {
     display: block;
-    
 }
