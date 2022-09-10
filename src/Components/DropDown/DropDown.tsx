@@ -4,8 +4,8 @@ export const DropDown = ({ name, menu }: { name: string, menu: { path: string, t
 
   return <div className="dropdown">
     <button className="dropbtn">{!!name ? name : 'LogIn'}</button>
-    <button className="dropdown-content">
+    <div className="dropdown-content">
       {menu.map(link => <a href={link.path} key={link.text}>{link.text}</a>)}
-    </button>
+    </div>
   </div>
 }
