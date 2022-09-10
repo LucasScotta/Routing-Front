@@ -26,7 +26,7 @@ export const Palette = () => {
         <div className="palette-colors">
             {colors.map(color => {
                 return (
-                    <Color key={color} color={color} text="and save" />
+                    <Color key={color} color={color} text="& save" />
                 )
             })}
         </div>

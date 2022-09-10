@@ -27,7 +27,7 @@ export const Color = ({ color, text }: { color: string, text?: string }) => {
             style={{ backgroundColor: color }}>
             <span className="palette-rgb-text">
                 <p>click to copy</p>
-                <p>{!!text ? <span>& save</span> : <></>}</p>
+                <p>{!!text ? <span>{text}</span> : <></>}</p>
             </span>
         </div>
     )
