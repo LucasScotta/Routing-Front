@@ -4,6 +4,7 @@
 }
 
 .dropbtn {
+  cursor: pointer;
   min-width: 100px;
   background-color: #04AA6D;
   color: white;

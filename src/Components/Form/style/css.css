@@ -1,8 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 .form-container {
-    font-family: 'Poppins', sans-serif;
-    justify-self: center;
-    border: 5px solid blue;
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid #181818;
+    border-radius: 10px;
+    min-height: 150px;
+    min-width: 200px;
+}
+
+.form-container input {
+    font-size: 16px;
+    min-height: 28px;
+    margin-top: 2px;
+    border: none;
+}
+
+.form-container label:checked {
+    border: 3px solid black;
+}
+
+.form-container button {
+    cursor: pointer;
+    border: none;
+    min-height: 28px;
+    min-width: 100px;
+    background-color: #FFDE00;
+    font-weight: bold;
+    bottom: 3px;
 }

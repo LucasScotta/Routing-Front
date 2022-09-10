@@ -19,19 +19,17 @@ export const Form = ({ init, state, labels, submit }: FormProps) => {
         return state.setData({ ...state.data, [id]: value })
     }
 
-        return <form className="form-container" onSubmit={handleSubmit} onChange={handleChange}>
-            <div className="section-inputs">
-                {labels.map(label => <label key={label} htmlFor={label}>
-                    <input 
-                        required 
-                        id={label} 
-                        type={label === 'password' || label === 'newPassword' ? 'password' : 'text'}
-                        name={label}
-                        placeholder={label}
-                        className="required-inputs" />
-                </label>)}
-            </div>
-            <button type="submit" className="submit-btn">{submit}</button>
-        </form>
+    return <form className="form-container" onSubmit={handleSubmit} onChange={handleChange}>
+
+        {labels.map(label => <label key={label} htmlFor={label}>
+            <input
+                required
+                id={label}
+                type={label === 'password' || label === 'newPassword' ? 'password' : 'text'}
+                name={label}
+                placeholder={label} />
+        </label>)}
+        <button type="submit">{submit}</button>
+    </form>
 }
 
