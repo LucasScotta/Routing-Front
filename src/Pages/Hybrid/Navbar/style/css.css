@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
 /* //A que este adentro de Li que este adentro de .nav__links
 //button que este adentro de .cta */
 .nav__links li a,
 .cta button {
-    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: #edf0f1;
     text-decoration: none;
 }
 
