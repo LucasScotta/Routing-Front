@@ -1,3 +1,7 @@
+#palette {
+    margin: 16px;
+}
+
 .palette-colors {
     display: grid;
     grid-template-columns: repeat(4, 16vw);

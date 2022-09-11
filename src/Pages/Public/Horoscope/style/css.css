@@ -1,5 +1,6 @@
 .horoscope {
     place-content: center;
+    margin: 16px;
 }
 .horoscope-result {
     display: flex;
