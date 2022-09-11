@@ -43,7 +43,7 @@ export const Horoscope = () => {
         return <></>
     }
 
-    return <section id="horoscope">
+    return <section className="horoscope">
         <div>
             <select className="horoscope-selection" onChange={selectSign}>
                 {signs.map(sign => <option value={sign} key={sign}>{sign}</option>)}
@@ -55,14 +55,19 @@ export const Horoscope = () => {
             <p>{msg}</p>
         </div>
 
-        <div className="horoscope-result">{!!Object.entries(result).length ? Object.entries(result).map(entry => {
-            const key = entry[0]
-            const value = entry[1]
-            if (typeof value === 'string') {
-                return <Fragment key={key}>
-                    <p>{(key.slice(0, 1).toUpperCase() + key.slice(1)).replace('_', ' ')}</p><p className={key}>{value.replace('_', ' ')}</p>
-                </Fragment>
-            }
-        }) : <></>}</div>
-    </section>
+        {!!Object.entries(result).length
+            ? <div className="horoscope-result">
+                {Object.entries(result).map(entry => {
+                    const key = entry[0]
+                    const value = entry[1]
+                    if (typeof value === 'string') {
+                        return <div className={`option ${key}`} key={key}>
+                            <p>{(key.slice(0, 1).toUpperCase() + key.slice(1)).replace('_', ' ')}</p><p>{value.replace('_', ' ')}</p>
+                        </div>
+                    }
+                })
+                }
+            </div>
+            : <></>}
+    </section >
 }
