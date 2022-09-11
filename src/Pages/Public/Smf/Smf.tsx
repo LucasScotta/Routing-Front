@@ -42,9 +42,8 @@ export const Smf = () => {
         <section>
             <div className="smf">
                 {lights.map(light => (
-                <div className="light"><div
+                <div className="light" key={light}><div
                     id={light}
-                    key={light}
                     style={{ filter: `brightness(${light === data.color ? 100 : 35}%)`, backgroundColor: light }}
                     onClick={updateColor}
                     className="light"
