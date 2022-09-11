@@ -4,6 +4,7 @@ import { Color } from "../../../Components"
 import './style/css.css'
 import { AppStore } from "../../../redux/store"
 import { DeleteByPassword, UpdatePassword } from "../Password"
+import { PublicRoutes } from "../../../Routes"
 
 export const Profile = () => {
 
@@ -22,8 +23,9 @@ export const Profile = () => {
             </section>
             <UpdatePassword />
             <DeleteByPassword />
-            <section className="profile-palette">
-                {colors!! ? colors.map(color => <Color key={color} color={color} />) : <></>}
+            <section>
+                <h2>saved Colors</h2>
+                {colors!! ? <div className="profile-palette">{colors.map(color => <Color key={color} color={color} />)}</div> : <>You have no saved colors yet, <a href={`/${PublicRoutes.PALETTE}`}>Pick one</a></>}
             </section>
         </section>
     )

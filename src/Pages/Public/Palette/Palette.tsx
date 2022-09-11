@@ -22,7 +22,7 @@ export const Palette = () => {
         resetColors()
     }, [])
 
-    return <section id="palette">
+    return <section className="palette">
         <div className="palette-colors">
             {colors.map(color => {
                 return (
