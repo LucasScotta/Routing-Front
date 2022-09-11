@@ -1,0 +1,25 @@
+.home {
+    color: black;
+}
+
+.home-actions {
+    text-align: center;
+}
+
+.home-actions ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.home-actions ul li a {
+    text-decoration: none;
+    color: blue;
+    border-radius: 8px;
+}
+
+.home-actions ul li a:hover {
+    transition: 3s;
+    color: red;
+    background-color: blue;
+}
