@@ -1,24 +1,56 @@
 /* //A que este adentro de Li que este adentro de .nav__links
 //button que este adentro de .cta */
+.navbar {
+    display: flex;
+    border-radius: 35px;
+    width: 100vw;
+    justify-content: space-between;
+    background-color: #A5BECC;
+    align-items: center;
+    transition: 0.5s;
+    height: 24px;
+}
+
+@media (max-width:600px) {
+    .navbar::after {
+        content: "TAP";
+    }
+
+    .navbar:hover::after {
+        content: "";
+    }
+}
+
+.navbar:hover {
+    transition: 0.5s;
+    background-color: #AAC4FF;
+    height: 8vh;
+}
+
+
+
+.navbar:hover .navbar-dropdown {
+    display: flex;
+}
+
+@media (max-width:600px) {
+    .navbar:hover .nav__links li {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 600px) {
+    .navbar:hover .nav__links li {
+        display: inline-block;
+    }
+}
+
 .nav__links li a,
 .cta button {
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
-}
-
-.navbar {
-    border-radius: 35px;
-    display: flex;
-    justify-content: space-between;
-    background-color: #A5BECC;
-    align-items: center;
-    padding: 10px 0 10px;
-}
-
-.logo {
-    width: 8%;
-    cursor: pointer;
 }
 
 .nav__links li {
@@ -33,4 +65,9 @@
 
 .nav__links li a:hover {
     color: #363062;
+}
+
+.navbar .nav__links li,
+.navbar .navbar-dropdown {
+    display: none;
 }

@@ -1,16 +1,19 @@
 .dropdown {
   display: block;
-  margin-right: 100px;
+  margin: 20px;
 }
 
 .dropbtn {
   cursor: pointer;
   min-width: 100px;
   background-color: #04AA6D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   padding: 16px;
-  font-size: 16px;
-  border: none;
+  font-size: 20px;
+  border-radius: 24px;
 }
 
 .dropdown-content {
@@ -30,9 +33,4 @@
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
-}
-
-.dropdown:hover .dropbtn {
-  transition: 500ms;
-  filter: brightness(50%);
 }
