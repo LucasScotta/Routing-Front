@@ -5,7 +5,8 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #F9F9F9;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(39, 145, 218, 0.3841737378545168) 50%, rgba(255, 255, 255, 1) 100%);
 }
