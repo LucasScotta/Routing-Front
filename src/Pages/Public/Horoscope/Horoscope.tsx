@@ -59,7 +59,7 @@ export const Horoscope = () => {
                     const value = entry[1]
                     if (typeof value === 'string') {
                         return <div className={`option ${key}`} key={key}>
-                            <p>{(key.slice(0, 1).toUpperCase() + key.slice(1)).replace('_', ' ')}</p><p>{value.replace('_', ' ')}</p>
+                            <p>{(key.slice(0, 1).toUpperCase() + key.slice(1)).replace('_', ' ')}:</p><p>{value.replace('_', ' ')}</p>
                         </div>
                     }
                 })
