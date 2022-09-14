@@ -1,28 +1,37 @@
 .horoscope {
-    place-content: center;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
     margin: 16px;
 }
+
+.horoscope-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.horoscope-options * {
+    color: black;
+    max-width: 250px;
+    border-radius: 4px;
+    border: none;
+    margin: 4px;
+}
+
 .horoscope-result {
     display: flex;
     flex-direction: column;
     max-width: 400px;
     padding: 20px;
-    background-color: #FFC38B;
+    background: linear-gradient(180deg, rgba(4,4,4,0.3785714969581583) 0%, rgba(116,116,116,1) 100%);;
     color: white;
     border-radius: 12px;
 }
+
 .option {
     color: black;
     display: flex;
     justify-content: space-around;
-}
-.horoscope select,
-.horoscope button {
-    margin-right: 5px;
-    width: 10rem;
-    height: 50px;
-    text-align: center;
-    font-size: 20px;
 }
 
 .description {

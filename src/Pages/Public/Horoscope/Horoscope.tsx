@@ -35,25 +35,22 @@ export const Horoscope = () => {
         const { value } = target
         return setData({ ...data, day: value })
     }
-    const showResults = () => {
-        const entries = Object.entries(result)
-        if (!!entries.length) {
-            return
-        }
-        return <></>
-    }
 
     return <section className="horoscope">
-        <div>
-            <select className="horoscope-selection" onChange={selectSign}>
-                {signs.map(sign => <option value={sign} key={sign}>{sign}</option>)}
-            </select>
-            <select className="horoscope-selection" onChange={selectDay}>
-                {days.map(day => <option value={day} key={day}>{day}</option>)}
-            </select>
+        <div className="horoscope-options">
+
+            <div>
+                <select onChange={selectSign}>
+                    {signs.map(sign => <option value={sign} key={sign}>{sign}</option>)}
+                </select>
+                <select onChange={selectDay}>
+                    {days.map(day => <option value={day} key={day}>{day}</option>)}
+                </select>
+            </div>
+
             <button onClick={search}>Search</button>
-            <p>{msg}</p>
         </div>
+        <p>{msg}</p>
 
         {!!Object.entries(result).length
             ? <div className="horoscope-result">
