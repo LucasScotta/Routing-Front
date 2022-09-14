@@ -8,7 +8,7 @@ import { PrivateRoutes, PublicRoutes } from "../../../../Routes";
 import { SetNewPassword } from "../../../../services";
 
 export const UpdatePassword = () => {
-    const dispatch = useDispatch()
+    
     const navigate = useNavigate()
     const [data, setData] = useState({ password: '', newPassword: '' })
     const userState = useSelector((store: AppStore) => store.user)

@@ -12,6 +12,7 @@ export const Signup = () => {
 
     const navigate = useNavigate()
     // user's data to login
+    const [msg, setMsg] = useState('')
     const [data, setData] = useState({ name: '', password: '' })
     const dispatch = useDispatch()
 
@@ -38,12 +39,16 @@ export const Signup = () => {
             }
 
         }
-        catch (e) {
-            console.log('ERROR ON Signup.tsx:', e)
+        catch (e: unknown | any) {
+            const data = !!e && !!e.response && e.response.data
+            if (!!data) {
+                return setMsg(data)
+            }
         }
     }
 
     return <section id="sign-up">
         <Form init={signUp} state={{ data, setData }} labels={['name', 'password']} submit='Sign-up' />
+        <p>{msg}</p>
     </section>
 }

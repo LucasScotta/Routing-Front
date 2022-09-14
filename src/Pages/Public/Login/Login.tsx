@@ -10,6 +10,7 @@ import { logByUser } from "../../../services"
 
 export const Login = () => {
     // user's data to login
+    const [msg, setMsg] = useState('')
     const [data, setData] = useState({ name: '', password: '' })
 
     const dispatch = useDispatch()
@@ -28,21 +29,22 @@ export const Login = () => {
      * @returns {null}
      */
     const login = async (): Promise<void> => {
+        setMsg('Loading...')
         const { name, password } = data
         if (!name || !password) return
         try {
             const user = await logByUser(name, password)
-
             dispatch(createUser(user))
-
             return navigate(`/${PrivateRoutes.PRIVATE}`, { replace: true })
         } catch (e) {
-            console.log('ERROR ON Login.tsx: ', e)
+            setMsg('Try again')
         }
     }
 
 
     return <section id="login">
         <Form init={login} state={{ data, setData }} labels={['name', 'password']} submit='login' />
+        <p>{msg}</p>
     </section>
 }
+

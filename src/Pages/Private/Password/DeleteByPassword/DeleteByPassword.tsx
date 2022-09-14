@@ -9,6 +9,7 @@ import { DeleteAccountByPassword, SetNewPassword } from "../../../../services";
 
 export const DeleteByPassword = () => {
     const navigate = useNavigate()
+    const[msg, setMsg] = useState('This action is irreversible')
     const [data, setData] = useState({ password: '' })
     const userState = useSelector((store: AppStore) => store.user)
     const { name } = userState
@@ -22,6 +23,8 @@ export const DeleteByPassword = () => {
     const DeleteAccount = async (): Promise<void> => {
         const { password } = data
         if (!password) return
+        if (!confirm('Are you sure?')) return
+        setMsg('Loading...')
 
         try {
             const resp = await DeleteAccountByPassword(name, password)
@@ -30,15 +33,15 @@ export const DeleteByPassword = () => {
                 return navigate(`/${PrivateRoutes.LOGOUT}`, { replace: true })
             }
 
-        } catch (e) {
-            console.log('ERROR ON UpdatePassword.tsx: ', e)
+        } catch (e: any) {
+            setMsg(e.response.data)
         }
     }
 
     return (<>
         <h2>Delete Account</h2>
         <Form init={DeleteAccount} state={{ data, setData }} labels={['password']} submit="Delete Account" />
-        <p>This action is irreversible</p>
+        <p>{msg}</p>
     </>
     )
 }
