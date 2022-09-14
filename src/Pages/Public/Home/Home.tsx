@@ -8,9 +8,9 @@ export const Home = () => {
     const { name } = userState
 
     return <section className="home">
-        <h1>Welcome{!!name && ' ' +name}!</h1>
+        <h1>Welcome{!!name && ' ' + name}!</h1>
         <p>This page is hosted on netlify and Heroku, developed with React-Routing, Redux and TypeScript. I hope you enjoy it</p>
-        <p>Special thanks to <a href="https://aztro.sameerkumar.website/">Aztro</a> for its Horoscope's API</p>
+        <p>Special thanks to <a href="https://aztro.sameerkumar.website/" target="_blank">Aztro</a> for its Horoscope's API</p>
         <div className="home-actions">
             <p>Sections</p>
             <ul>
