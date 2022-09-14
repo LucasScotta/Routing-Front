@@ -2,24 +2,36 @@
     color: black;
 }
 
-.home-actions {
-    text-align: center;
-}
-
-.home-actions ul {
+.home ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
+    font-size: 24px;
 }
 
-.home-actions ul li a {
+@media only screen and (max-width: 900px) {
+
+    /* For mobile phones: */
+    .home {
+        text-align: center;
+    }
+    .home ul {
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+}
+.home ul li a {
     text-decoration: none;
-    color: blue;
+    opacity: 50%;
+    color: #fff;
     border-radius: 8px;
+    transition: .5s;
 }
 
-.home-actions ul li a:hover {
-    transition: 3s;
-    color: red;
-    background-color: blue;
+.home ul li a:hover {
+    transition: 1s;
+    color: #000;
+    opacity: 110%;
+    background-color: #fff;
 }
