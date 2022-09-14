@@ -20,15 +20,15 @@ export const Color = ({ color, text }: { color: string, text?: string }) => {
         dispatch(updateUser({ colors: [...userState.colors, color] }))
     }
     return (
-        <div
+        <span
             onClick={() => saveColor(color)}
             className="palette-color"
             key={color}
             style={{ backgroundColor: color }}>
-            <span className="palette-rgb-text">
+            <span>
                 <p>click to copy</p>
                 <p>{!!text ? <span>{text}</span> : <></>}</p>
             </span>
-        </div>
+        </span>
     )
 }
