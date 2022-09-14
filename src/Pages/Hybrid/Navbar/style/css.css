@@ -4,22 +4,13 @@
     display: flex;
     border-radius: 35px;
     width: 100vw;
-    justify-content: space-between;
     background-color: #A5BECC;
     align-items: center;
+    justify-content: space-between;
     transition: 0.5s;
     height: 24px;
 }
 
-@media (max-width:600px) {
-    .navbar::after {
-        content: "TAP";
-    }
-
-    .navbar:hover::after {
-        content: "";
-    }
-}
 
 .navbar:hover {
     transition: 0.5s;
@@ -29,45 +20,58 @@
 
 
 
-.navbar:hover .navbar-dropdown {
+.navbar:hover ul {
     display: flex;
 }
 
 @media (max-width:600px) {
-    .navbar:hover .nav__links li {
+    .navbar:hover ul {
         display: flex;
         flex-direction: column;
     }
 }
 
 @media (min-width: 600px) {
-    .navbar:hover .nav__links li {
-        display: inline-block;
+    .navbar:hover ul {
+        display: flex;
     }
 }
 
-.nav__links li a,
-.cta button {
+.navbar ul li a {
     font-weight: 500;
     font-size: 16px;
     text-decoration: none;
 }
 
-.nav__links li {
-    display: inline-block;
-    padding-left: 20px;
+.navbar ul {
+    margin: 4px;
+    padding: 0;
 }
 
-.nav__links li a {
+.navbar ul:hover li {
+    display: flex;
+}
+
+.navbar ul:hover::after,
+.navbar ul:hover::before {
+    content: "";
+}
+
+.sections::after {
+    content: "SECTIONS";
+}
+
+.navbar ul li {
+    margin: 8px;
+    list-style: none;
+    display: none;
+}
+
+.navbar ul li a {
     color: white;
     transition: all 0.3s ease 0s;
 }
 
-.nav__links li a:hover {
+.navbar ul li a:hover {
     color: #363062;
-}
-
-.navbar .nav__links li,
-.navbar .navbar-dropdown {
-    display: none;
 }

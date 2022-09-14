@@ -10,13 +10,12 @@ export const Navbar = () => {
     return (
         <header>
             <nav className="navbar">
-                <ul className="nav__links">
+                <ul className="sections">
                     <li><a href={`/${PublicRoutes.HOME}`}>Home</a></li>
                     <li><a href={`/${PublicRoutes.PALETTE}`}>Palette</a></li>
                     <li><a href={`/${PublicRoutes.SMF}`}>Semaphore</a></li>
                     <li><a href={`/${PublicRoutes.HOROSCOPE}`}>Horoscope</a></li>
                 </ul>
-                <div className="navbar-dropdown">
                     {!!name
                         ? <DropDown
                             name={name}
@@ -27,7 +26,6 @@ export const Navbar = () => {
                         : <DropDown name={name} menu={
                             [{ path: `/${PublicRoutes.LOGIN}`, text: PublicRoutes.LOGIN },
                             { path: `/${PublicRoutes.SIGNUP}`, text: PublicRoutes.SIGNUP }]} />}
-                </div>
             </nav>
         </header>
     )
