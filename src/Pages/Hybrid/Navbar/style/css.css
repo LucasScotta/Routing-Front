@@ -19,12 +19,6 @@
     display: flex;
 }
 
-.navbar ul li a {
-    font-weight: 500;
-    font-size: 16px;
-    text-decoration: none;
-}
-
 .navbar ul {
     margin: 4px;
     padding: 0;
@@ -34,20 +28,23 @@
     display: flex;
 }
 
-.navbar ul:hover::after,
-.navbar ul:hover::before {
-    content: "";
-}
-
-.sections::after {
-    content: "SECTIONS";
-}
-
 .navbar ul li {
     margin: 8px;
     list-style: none;
     display: none;
 }
+
+.navbar ul:hover::after,
+.navbar ul:hover::before {
+    content: "";
+}
+
+.navbar ul li a {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
 
 .navbar ul li a {
     color: white;
@@ -56,4 +53,8 @@
 
 .navbar ul li a:hover {
     color: #363062;
+}
+
+.sections::after {
+    content: "SECTIONS";
 }
