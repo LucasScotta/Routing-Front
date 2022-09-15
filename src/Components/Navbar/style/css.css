@@ -15,28 +15,32 @@
     height: 48px;
 }
 
-.navbar:hover ul {
-    display: flex;
+.navbar span {
+    background-image: url('../svg/user.png');
+    background-size: 100%;
+    cursor: pointer;
+    margin: 4px;
+    width: 28px;
+    height: 28px;
+    transition: 0.5s;
+}
+
+@media (min-width:720px) {
+    .navbar span:hover {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .navbar ul {
+    display: flex;
     margin: 4px;
     padding: 0;
-}
-
-.navbar ul:hover li {
-    display: flex;
 }
 
 .navbar ul li {
     margin: 8px;
     list-style: none;
-    display: none;
-}
-
-.navbar ul:hover::after,
-.navbar ul:hover::before {
-    content: "";
 }
 
 .navbar ul li a {
@@ -53,8 +57,4 @@
 
 .navbar ul li a:hover {
     color: #363062;
-}
-
-.sections::after {
-    content: "SECTIONS";
 }
