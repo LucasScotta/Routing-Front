@@ -12,7 +12,7 @@
 .navbar:hover {
     transition: 0.5s;
     background-color: #AAC4FF;
-    height: 8vh;
+    height: 48px;
 }
 
 .navbar:hover ul {

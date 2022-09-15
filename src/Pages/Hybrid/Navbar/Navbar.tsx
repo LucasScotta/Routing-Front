@@ -16,29 +16,17 @@ export const Navbar = () => {
                     <li><a href={`/${PublicRoutes.SMF}`}>Semaphore</a></li>
                     <li><a href={`/${PublicRoutes.HOROSCOPE}`}>Horoscope</a></li>
                 </ul>
-                    {!!name
-                        ? <DropDown
-                            name={name}
-                            menu={
-                                [{ path: `/${PrivateRoutes.PRIVATE}/${PrivateRoutes.PROFILE}`, text: PrivateRoutes.PROFILE },
-                                { path: `/${PrivateRoutes.LOGOUT}`, text: PrivateRoutes.LOGOUT }]}
-                        />
-                        : <DropDown name={name} menu={
-                            [{ path: `/${PublicRoutes.LOGIN}`, text: PublicRoutes.LOGIN },
-                            { path: `/${PublicRoutes.SIGNUP}`, text: PublicRoutes.SIGNUP }]} />}
+                {!!name
+                    ? <DropDown
+                        name={name}
+                        menu={
+                            [{ path: `/${PrivateRoutes.PRIVATE}/${PrivateRoutes.PROFILE}`, text: PrivateRoutes.PROFILE },
+                            { path: `/${PrivateRoutes.LOGOUT}`, text: PrivateRoutes.LOGOUT }]}
+                    />
+                    : <DropDown name={name} menu={
+                        [{ path: `/${PublicRoutes.LOGIN}`, text: PublicRoutes.LOGIN },
+                        { path: `/${PublicRoutes.SIGNUP}`, text: PublicRoutes.SIGNUP }]} />}
             </nav>
         </header>
     )
 }
-
-/*
-<nav class="navbar">
-        <img src="./logo para web-fi18988281.png" alt="logo" class="logo">
-        <ul class="nav__links">
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-        <a href="#" class="cta"><button>Contact</button></a>
-    </nav>
-*/

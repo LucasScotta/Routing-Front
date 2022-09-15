@@ -8,7 +8,7 @@ export const Color = ({ color, text }: { color: string, text?: string }) => {
     const dispatch = useDispatch()
     const userState = useSelector((store: AppStore) => store.user)
 
-    const copy = () => navigator.clipboard.writeText(color)
+    const copy = () => !!navigator.clipboard && navigator.clipboard.writeText(color)
     const saveColor = (color: string) => {
         copy()
 
