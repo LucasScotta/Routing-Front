@@ -9,13 +9,15 @@ export const Palette = () => {
     const [buttonColor, setButtonColor] = useState({ backgroundColor: '', color: '' })
 
     const resetColors = (): void => {
-        const arr = []
-        while (arr.length < 8) {
-            arr.push(randomRGB())
+        const set = new Set<string>()
+        while (set.size < 8) {
+            set.add(randomRGB())
         }
+
         const buttonStyling = { backgroundColor: randomRGB(), color: randomRGB() }
+
         setButtonColor(buttonStyling)
-        setColors(arr)
+        setColors([...set.values()])
     }
 
     useEffect(() => {
@@ -31,10 +33,9 @@ export const Palette = () => {
             })}
         </div>
         <input
-            className="palette-submit"
-            style={{ transition: 'background-color 1s ease-in', backgroundColor: buttonColor.backgroundColor, color: buttonColor.color }}
+            style={buttonColor}
             onClick={resetColors}
             type="submit"
-            value="RESET" />
+            value="LUCKY!" />
     </section>
 }

@@ -7,20 +7,33 @@
 .palette-colors {
     font-size: 24px;
     display: grid;
-    grid-template-columns: repeat(4, 16vw);
-    grid-template-rows: repeat(2, 20vh);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 100px);
 }
 
-.palette-submit {
-    place-self: end;
+@media (min-width: 720px) {
+    .palette-colors {
+        grid-template-columns: repeat(4, 240px);
+        grid-template-rows: repeat(2, 180px);
+    }
+
+    .palette-colors span {
+        margin: 4px;
+    }
+}
+
+.palette input {
+    place-self: center;
     font-weight: bold;
+    font-size: 20px;
     width: 100px;
     height: 50px;
     margin: 16px;
     border: none;
-    font-size: 20px;
+    border-radius: 4px;
+    transition: 0.5s;
 }
 
-.palette-submit:hover {
+.palette input:hover {
     cursor: pointer;
 }

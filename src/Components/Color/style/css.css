@@ -1,11 +1,10 @@
 .palette-color {
-    border: 1px solid black;
+    border: none;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: center;
     place-items: center;
-    margin: 4px;
 }
 
 .palette-color:hover {
