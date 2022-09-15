@@ -26,13 +26,17 @@
     }
 
     .profile-data {
+        display: block;
         position: absolute;
         left: 0;
         margin: 10px;
         border: 2px solid black;
         border-radius: 10px;
-        font-style: italic;
         color: white;
         background-color: #181818;
+    }
+
+    .profile-data div {
+        font-style: italic;
     }
 }
