@@ -21,11 +21,15 @@ export const Profile = () => {
                     Member since: {new Date(createdAt).toLocaleString()}
                 </div>
             </section>
-            <UpdatePassword />
-            <DeleteByPassword />
+            <section className="profile-auth">
+                <UpdatePassword />
+                <DeleteByPassword />
+            </section>
             <section>
                 <h2>saved Colors</h2>
-                {colors!! ? <div className="profile-palette">{colors.map(color => <Color key={color} color={color} />)}</div> : <>You have no saved colors yet, <a href={`/${PublicRoutes.PALETTE}`}>Pick one</a></>}
+                {colors!!
+                    ? <div className="profile-palette">{colors.map(color => <Color key={color} color={color} />)}</div>
+                    : <p>You have no saved colors yet, <a href={`/${PublicRoutes.PALETTE}`}>Pick one</a></p>}
             </section>
         </section>
     )
