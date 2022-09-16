@@ -1,0 +1,1 @@
+export const modal = document.getElementById('modal') as HTMLElement
