@@ -6,7 +6,11 @@ import { modal } from "../../helpers/Modal.helpper";
 export const Portal = ({ showPortal, children }: { showPortal: boolean, children: JSX.Element | JSX.Element[] }) => {
 
   useEffect(() => {
-    modal.classList.toggle('portal-open')
+    if (showPortal) {
+      modal.classList.add('portal-open')
+      return
+    }
+    modal.classList.remove('portal-open')
   }, [showPortal])
 
   return createPortal(
