@@ -1,11 +1,15 @@
-#portal {
-    display: none;
+.portal {
     position: fixed;
-    left: 0;
     top: 0;
-    bottom: 0;
     right: 0;
+    height: 100%;
+    width: 0;
     background-color: rgba(0, 0, 0, .8);
     color: #FFF;
     font-size: 40px;
+}
+
+.portal-open {
+    display: block;
+    width: 100%;
 }
