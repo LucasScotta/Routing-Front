@@ -9,46 +9,68 @@
 }
 
 .menu-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
-    display: flex;
     flex-direction: column;
     place-items: center;
     border-radius: 20px;
     height: 100%;
-    width: 24%;
-    transition: 1s;
-    background-color: rgba(49, 85, 99, 0.678);
-    font-size: 12px;
+    width: 0%;
+    transition: 0.5s;
+    background-color: rgba(24, 128, 168, 0.5);
+    font-size: 8px;
+}
+
+.menu-active {
+    display: flex;
+    width: 60%;
+}
+
+@media (min-width: 720px) {
+    .menu-container {
+        height: 0%;
+        width: 100%;
+    }
+
+    .menu-active {
+        display: flex;
+        height: 25%;
+    }
 }
 
 .menu-container button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 8px;
-    background-color: none;
+    place-self: end;
+}
+
+
+.menu-actions {
+    opacity: 75%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 8px;
+}
+
+.menu-actions input {
+    position: fixed;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu-actions label {
+    cursor: pointer;
+}
+
+.menu-actions input:checked+label {
+    text-decoration: underline;
+}
+
+.menu-container button {
+    align-self: flex-end;
+    background: none;
     border: none;
 }
 
-.menu-container ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-}
-.menu-container ul li {
-    font-size: 20px;
-    border: 2px solid #fff;
-
-}
 @media (min-width:720px) {
-    .navbar span:hover {
-        width: 50px;
-        height: 50px;
-        opacity: 50%;
-    }
 }
