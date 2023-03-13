@@ -1,5 +1,5 @@
 //API MODEL
-export const ApiBaseUrl = 'https://semaphoroscope.herokuapp.com'
+export const ApiBaseUrl = 'https://routing-back-production.up.railway.app'
 export const HoroscopeApiUrl = 'https://aztro.sameerkumar.website'
 
 export const ApiEndPoints = {
